@@ -18,7 +18,7 @@ const api = 'http://api.douban.com//v2/movie/in_theaters'; //请求的api网址
 //电影列表页
 export default class List extends Component {
     static navigationOptions = { //页面标题
-        // title: '列表页', //标题栏文字
+        title: '上映', //标题栏文字
         header: null, //隐藏标题栏
     };
 

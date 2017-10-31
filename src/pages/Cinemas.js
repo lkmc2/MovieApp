@@ -11,6 +11,7 @@ import {
 export default class Cinemas extends Component {
     static navigationOptions = { //页面标题
         title: '影院',
+        header: null, //隐藏标题栏
     };
     render() {
         const {state, goBack} = this.props.navigation; //获取导航工具的状态

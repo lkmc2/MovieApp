@@ -13,7 +13,18 @@ const MyTab = TabNavigator({ //利用导航底栏生成界面
     Cinemas: {screen: Cinemas}, //影院页
     MyMovies: {screen: MyMovies}, //我的电影页
 }, {
-
+    tabBarPosition: 'bottom',
+    animationEnabled: true,
+    tabBarOptions: {
+        activeTintColor: '#0390EB',
+        inactiveTintColor: '#fff',
+        labelStyle: {
+            fontSize: 16,
+        },
+        style: {
+            backgroundColor: '#222',
+        },
+    },
 });
 
 const App = StackNavigator({ //利用标题导航栏生成界面
