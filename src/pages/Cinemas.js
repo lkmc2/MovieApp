@@ -17,18 +17,26 @@ export default class Cinemas extends Component {
         const {state, goBack} = this.props.navigation; //获取导航工具的状态
 
         return (
-            <View>
-                <Text>影院页</Text>
+            <View style={styles.container}>
+                <Text style={styles.title}>影院页</Text>
             </View>
         );
     }
 }
 
 const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
     row: {
         paddingHorizontal: 5,
     },
     loading: {
         marginTop: 250,
-    }
+    },
+    title: {
+        fontSize: 30,
+    },
 });

@@ -9,6 +9,7 @@ import {
     AsyncStorage,
     TouchableOpacity,
     Linking,
+    ScrollView,
 } from 'react-native';
 
 const api = 'https://api.douban.com/v2/movie/subject'; //请求网址
@@ -96,15 +97,20 @@ export default class Detail extends Component {
                 {/*是否已准备好数据*/}
                 {
                     ready ?
-                        <View>
+                        <ScrollView
+                            contentContainerStyle={styles.contentContainer}>
+                        <View style={styles.container}>
                             <TouchableOpacity onPress={this.playVideo}>
                                 <Image source={{uri: image}} style={styles.image}>
                                     <Image source={require('../img/play-icon.png')} style={styles.play}/>
                                 </Image>
                             </TouchableOpacity>
-                            <Text>{title}</Text>
-                            <Text>{summary}</Text>
+                            <Text style={styles.title}>{title}</Text>
+
+                                <Text style={styles.content}>{'    ' + summary}</Text>
+
                         </View>
+                        </ScrollView>
                         :
                         <ActivityIndicator size="large" style={styles.loading}/> //进度条
                 }
@@ -114,6 +120,17 @@ export default class Detail extends Component {
 }
 
 const styles = StyleSheet.create({
+    container: {
+        alignItems: 'center',
+    },
+    title: {
+        fontSize: 20,
+        marginTop: 20,
+    },
+    content: {
+        padding: 20,
+        fontSize: 16,
+    },
     loading: {
         marginTop: 250,
     },
@@ -131,5 +148,8 @@ const styles = StyleSheet.create({
         position: 'absolute',
         right: -30,
         bottom: -30,
+    },
+    contentContainer: {
+        paddingVertical: 20
     },
 });

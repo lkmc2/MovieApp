@@ -105,7 +105,7 @@ export default class List extends Component {
 
         return (
             <View>
-                <Text>子组件传回的数据：{childState}</Text>
+                {/*<Text>子组件传回的数据：{childState}</Text>*/}
                 {
                     ready ?
                         <FlatList
